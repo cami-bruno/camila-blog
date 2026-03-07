@@ -1,7 +1,4 @@
 import Link from "next/link";
-import { getAllPosts, getFeaturedPosts } from "@/lib/posts";
-import { PostCard } from "@/components/PostCard";
-import { TagPill } from "@/components/TagPill";
 import { AuroraHero } from "@/components/ui/AuroraHero";
 import { ParticleField } from "@/components/ui/ParticleField";
 import { DNAHelix } from "@/components/ui/DNAHelix";
@@ -11,56 +8,46 @@ import { GlowBorderCard } from "@/components/ui/GlowBorderCard";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Camila Bruno — Biotech Portfolio",
+  title: "Cami Bruno",
   description:
-    "Biotechnology Engineering student at ORT Uruguay writing about biotech, genetics, and the science behind real human problems.",
+    "Biotechnology Engineering student at ORT Uruguay writing about genetics, diagnostics, and the science behind things that actually matter.",
 };
 
 const interests = [
   {
     emoji: "🧬",
     label: "Human Genetics",
-    desc: "How one mutation can change a life — and how we're learning to intervene.",
+    desc: "The idea that one base pair change can completely rewrite someone's life is still wild to me. I keep coming back to it.",
     glow: "rgba(34,211,238,0.15)",
-    accent: "#22d3ee",
   },
   {
     emoji: "🔬",
     label: "Lab Techniques",
-    desc: "PCR, electrophoresis, dilutions — the unglamorous backbone of discovery.",
+    desc: "PCR, gel electrophoresis, dilutions — not glamorous, but once you get why they work, everything clicks a little more.",
     glow: "rgba(52,211,153,0.15)",
-    accent: "#34d399",
   },
   {
     emoji: "⚕️",
     label: "Diagnostics",
-    desc: "The gap between knowing the science and reaching the patient.",
+    desc: "There's a gap between figuring something out in a lab and actually getting it to a patient. That gap bothers me.",
     glow: "rgba(167,139,250,0.15)",
-    accent: "#a78bfa",
   },
   {
     emoji: "🌱",
-    label: "Biotech Impact",
-    desc: "Where does applied biotech actually show up in a country like Uruguay?",
+    label: "Biotech in Uruguay",
+    desc: "I'm from here. Biotech doesn't always reach places like this, and I think about that more than I probably should.",
     glow: "rgba(251,191,36,0.15)",
-    accent: "#fbbf24",
   },
 ];
 
 export default function HomePage() {
-  const featured = getFeaturedPosts(3);
-  const latest = featured.length >= 3 ? featured : getAllPosts().slice(0, 3);
-
   return (
     <>
       {/* ── Hero ──────────────────────────────────────── */}
-      {/* AuroraHero is a plain relative block — no flex so absolute children behave correctly */}
-      <AuroraHero className="min-h-[560px]">
+      <AuroraHero className="min-h-screen">
 
-        {/* Particles — full coverage */}
         <ParticleField className="pointer-events-none absolute inset-0 opacity-20" />
 
-        {/* DNA — right 40% of the viewport, never touches the left text */}
         <div
           className="pointer-events-none absolute inset-y-0 right-0 hidden lg:flex items-center justify-center opacity-[0.09]"
           style={{ width: "42%" }}
@@ -68,8 +55,7 @@ export default function HomePage() {
           <DNAHelix width={460} amplitude={100} period={140} viewHeight={660} speed={5} />
         </div>
 
-        {/* Content row — vertically centred via flex on an inner full-height div */}
-        <div className="relative z-10 flex items-center min-h-[560px]">
+        <div className="relative z-10 flex items-center min-h-screen">
           <div className="w-full max-w-5xl mx-auto px-4 sm:px-8 py-24">
             <div className="max-w-lg fade-in">
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white/80 text-xs font-semibold tracking-wide mb-6 backdrop-blur-sm border border-white/15">
@@ -83,21 +69,15 @@ export default function HomePage() {
               </h1>
 
               <p className="text-white/70 text-lg leading-relaxed mb-8">
-                A biotech student in Montevideo fascinated by human genetics,
-                molecular diagnostics, and the science behind problems that actually matter.
-                This is where I think out loud.
+                I&apos;m a biotech engineering student at ORT Uruguay who spends too much
+                time reading papers I half-understand and asking why good science
+                doesn&apos;t reach more people. This is where I write while I figure it out.
               </p>
 
-              <div className="flex flex-wrap gap-3">
-                <Link href="/blog"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[color:var(--accent)] text-[#020817] font-bold text-sm hover:opacity-90 transition-all shadow-[0_0_20px_rgba(34,211,238,0.3)] hover:shadow-[0_0_30px_rgba(34,211,238,0.5)]">
-                  Read my thoughts →
-                </Link>
-                <Link href="/about"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/20 text-white font-semibold text-sm hover:bg-white/10 hover:border-white/40 transition-all backdrop-blur-sm">
-                  About me
-                </Link>
-              </div>
+              <Link href="/blog"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[color:var(--accent)] text-[#020817] font-bold text-sm hover:opacity-90 transition-all shadow-[0_0_20px_rgba(34,211,238,0.3)] hover:shadow-[0_0_30px_rgba(34,211,238,0.5)]">
+                Read my thoughts →
+              </Link>
             </div>
           </div>
         </div>
@@ -142,57 +122,23 @@ export default function HomePage() {
                 </span>
               </div>
               <p className="text-[color:var(--foreground)] leading-relaxed">
-                Exploring{" "}
+                Currently neck-deep in{" "}
                 <strong className="text-[color:var(--accent)]">
-                  molecular diagnostics and PCR techniques
+                  PCR and molecular diagnostics
                 </strong>{" "}
-                in my Biochemistry course. Also going deep on{" "}
+                for my Biochemistry class — finally starting to understand why it works,
+                not just how. Also can&apos;t stop thinking about{" "}
                 <strong className="text-[color:var(--accent-2)]">
-                  gene therapy access inequality
-                </strong>{" "}
-                — specifically what it means that we have a functional cure for sickle cell
-                disease and 80% of patients can&apos;t afford it.
+                  gene therapy access
+                </strong>
+                : we have a functional cure for sickle cell disease and 80% of patients
+                can&apos;t afford it. That&apos;s the kind of thing that makes me want to
+                keep going.
               </p>
             </SpotlightCard>
           </GlowBorderCard>
         </section>
 
-        {/* ── Latest posts ──────────────────────────── */}
-        <section className="mb-16" aria-label="Latest posts">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-bold text-[color:var(--foreground)]">Latest posts</h2>
-            <Link href="/blog"
-              className="text-sm font-medium text-[color:var(--accent)] hover:opacity-80 transition-opacity">
-              View all →
-            </Link>
-          </div>
-
-          {latest.length === 0 ? (
-            <p className="text-[color:var(--muted)] text-sm">No posts yet — check back soon!</p>
-          ) : (
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {latest.map((post) => (
-                <PostCard key={post.slug} post={post} />
-              ))}
-            </div>
-          )}
-        </section>
-
-        {/* ── Browse by topic ───────────────────────── */}
-        <section className="mb-16" aria-label="Browse by topic">
-          <p className="text-xs font-bold uppercase tracking-widest text-[color:var(--muted)] mb-4">
-            Browse by topic
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {[
-              "genetics","lab-techniques","diagnostics",
-              "molecular-biology","biotech-uruguay",
-              "biochemistry","reflections","protocols",
-            ].map((tag) => (
-              <TagPill key={tag} tag={tag} />
-            ))}
-          </div>
-        </section>
       </div>
     </>
   );
