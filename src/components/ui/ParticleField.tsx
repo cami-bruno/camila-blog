@@ -22,6 +22,7 @@ export function ParticleField({ className }: { className?: string }) {
     if (!cvs) return;
     const ctx = cvs.getContext("2d");
     if (!ctx) return;
+    const ctx2: CanvasRenderingContext2D = ctx;
 
     let W = 0, H = 0;
     const dots: Dot[] = [];
@@ -48,7 +49,7 @@ export function ParticleField({ className }: { className?: string }) {
     }
 
     function draw() {
-      ctx.clearRect(0, 0, W, H);
+      ctx2.clearRect(0, 0, W, H);
 
       for (const d of dots) {
         d.x += d.vx; d.y += d.vy;
@@ -63,26 +64,26 @@ export function ParticleField({ className }: { className?: string }) {
           const dy = dots[i].y - dots[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < LINK) {
-            ctx.beginPath();
-            ctx.moveTo(dots[i].x, dots[i].y);
-            ctx.lineTo(dots[j].x, dots[j].y);
-            ctx.strokeStyle = `hsla(${dots[i].hue},85%,68%,${((1 - dist / LINK) * 0.28).toFixed(3)})`;
-            ctx.lineWidth = 0.9;
-            ctx.stroke();
+            ctx2.beginPath();
+            ctx2.moveTo(dots[i].x, dots[i].y);
+            ctx2.lineTo(dots[j].x, dots[j].y);
+            ctx2.strokeStyle = `hsla(${dots[i].hue},85%,68%,${((1 - dist / LINK) * 0.28).toFixed(3)})`;
+            ctx2.lineWidth = 0.9;
+            ctx2.stroke();
           }
         }
       }
 
       /* dots */
       for (const d of dots) {
-        const grd = ctx.createRadialGradient(d.x, d.y, 0, d.x, d.y, d.r * 5.5);
+        const grd = ctx2.createRadialGradient(d.x, d.y, 0, d.x, d.y, d.r * 5.5);
         grd.addColorStop(0, `hsla(${d.hue},90%,72%,0.22)`);
         grd.addColorStop(1, `hsla(${d.hue},90%,72%,0)`);
-        ctx.beginPath(); ctx.arc(d.x, d.y, d.r * 5.5, 0, Math.PI * 2);
-        ctx.fillStyle = grd; ctx.fill();
+        ctx2.beginPath(); ctx2.arc(d.x, d.y, d.r * 5.5, 0, Math.PI * 2);
+        ctx2.fillStyle = grd; ctx2.fill();
 
-        ctx.beginPath(); ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${d.hue},90%,80%,0.95)`; ctx.fill();
+        ctx2.beginPath(); ctx2.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+        ctx2.fillStyle = `hsla(${d.hue},90%,80%,0.95)`; ctx2.fill();
       }
 
       raf = requestAnimationFrame(draw);

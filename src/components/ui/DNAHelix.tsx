@@ -35,6 +35,7 @@ export function DNAHelix({
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+    const ctx2: CanvasRenderingContext2D = ctx;
 
     /* ── hi-dpi setup ── */
     const dpr = window.devicePixelRatio || 1;
@@ -42,7 +43,7 @@ export function DNAHelix({
     canvas.height = Math.round(viewHeight * dpr);
     canvas.style.width  = `${width}px`;
     canvas.style.height = `${viewHeight}px`;
-    ctx.scale(dpr, dpr);
+    ctx2.scale(dpr, dpr);
 
     const cx   = width / 2;
     const FOV  = 220;        // smaller → stronger perspective distortion
@@ -68,7 +69,7 @@ export function DNAHelix({
       const scrollOff  = ((elapsed / speed) * period) % period;
       const numReps    = Math.ceil(viewHeight / period) + 3;
 
-      ctx.clearRect(0, 0, width, viewHeight);
+      ctx2.clearRect(0, 0, width, viewHeight);
 
       const segs: Seg[] = [];
 
@@ -155,25 +156,25 @@ export function DNAHelix({
         /* ── wide glow halo (only for front-facing segments) ── */
         if (alpha > 0.70) {
           const scale = 2.6;
-          const glow  = ctx.createLinearGradient(
+          const glow  = ctx2.createLinearGradient(
             mx + nx * scale, my + ny * scale,
             mx - nx * scale, my - ny * scale,
           );
           glow.addColorStop(0,   `rgba(${cr},${cg},${cb},0)`);
           glow.addColorStop(0.5, `rgba(${cr},${cg},${cb},${alpha * 0.10})`);
           glow.addColorStop(1,   `rgba(${cr},${cg},${cb},0)`);
-          ctx.beginPath();
-          ctx.moveTo(x1 + nx * scale, y1 + ny * scale);
-          ctx.lineTo(x2 + nx * scale, y2 + ny * scale);
-          ctx.lineTo(x2 - nx * scale, y2 - ny * scale);
-          ctx.lineTo(x1 - nx * scale, y1 - ny * scale);
-          ctx.closePath();
-          ctx.fillStyle = glow;
-          ctx.fill();
+          ctx2.beginPath();
+          ctx2.moveTo(x1 + nx * scale, y1 + ny * scale);
+          ctx2.lineTo(x2 + nx * scale, y2 + ny * scale);
+          ctx2.lineTo(x2 - nx * scale, y2 - ny * scale);
+          ctx2.lineTo(x1 - nx * scale, y1 - ny * scale);
+          ctx2.closePath();
+          ctx2.fillStyle = glow;
+          ctx2.fill();
         }
 
         /* ── main tube quad: cylindrical shading via perpendicular gradient ── */
-        const grad = ctx.createLinearGradient(
+        const grad = ctx2.createLinearGradient(
           mx + nx, my + ny,
           mx - nx, my - ny,
         );
@@ -185,14 +186,14 @@ export function DNAHelix({
         grad.addColorStop(0.86, `rgba(${cr},${cg},${cb},${alpha * 0.50})`);
         grad.addColorStop(1,    `rgba(${cr},${cg},${cb},0)`);
 
-        ctx.beginPath();
-        ctx.moveTo(x1 + nx, y1 + ny);
-        ctx.lineTo(x2 + nx, y2 + ny);
-        ctx.lineTo(x2 - nx, y2 - ny);
-        ctx.lineTo(x1 - nx, y1 - ny);
-        ctx.closePath();
-        ctx.fillStyle = grad;
-        ctx.fill();
+        ctx2.beginPath();
+        ctx2.moveTo(x1 + nx, y1 + ny);
+        ctx2.lineTo(x2 + nx, y2 + ny);
+        ctx2.lineTo(x2 - nx, y2 - ny);
+        ctx2.lineTo(x1 - nx, y1 - ny);
+        ctx2.closePath();
+        ctx2.fillStyle = grad;
+        ctx2.fill();
       }
 
       rafRef.current = requestAnimationFrame(frame);
