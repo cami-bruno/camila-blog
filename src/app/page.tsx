@@ -49,10 +49,10 @@ export default function HomePage() {
         <ParticleField className="pointer-events-none absolute inset-0 opacity-20" />
 
         <div
-          className="pointer-events-none absolute inset-y-0 right-0 hidden lg:flex items-center justify-center opacity-[0.09]"
-          style={{ width: "42%" }}
+          className="pointer-events-none absolute inset-y-0 right-0 hidden lg:flex items-center justify-center opacity-[0.12]"
+          style={{ width: "58%" }}
         >
-          <DNAHelix width={460} amplitude={100} period={140} viewHeight={660} speed={5} />
+          <DNAHelix width={620} amplitude={140} period={160} viewHeight={920} speed={5} />
         </div>
 
         <div className="relative z-10 flex items-center min-h-screen">
