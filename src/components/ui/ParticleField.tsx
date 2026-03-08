@@ -9,7 +9,7 @@ interface Dot {
   hue: number;
 }
 
-const HUES  = [345, 315, 25];   // rose · pink · warm orange
+const HUES  = [330, 285, 45];   // pink · purple · gold
 const COUNT = 70;
 const LINK  = 180;
 const SPEED = 0.38;

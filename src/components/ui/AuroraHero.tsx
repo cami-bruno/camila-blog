@@ -7,7 +7,7 @@ interface AuroraHeroProps {
 
 export function AuroraHero({ children, className }: AuroraHeroProps) {
   return (
-    <div className={cn("relative overflow-hidden bg-[#0e0608]", className)}>
+    <div className={cn("relative overflow-hidden bg-[#110812]", className)}>
       {/* Static aurora layers */}
       <div className="pointer-events-none absolute inset-0 aurora-base" />
       <div className="relative z-10">{children}</div>

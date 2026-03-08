@@ -79,9 +79,9 @@ export function DNAHelix({
         /* ── two helix strands ── */
         for (let strand = 0; strand < 2; strand++) {
           const phase = strand * Math.PI;
-          const cr = strand === 0 ? 244 : 240;
-          const cg = strand === 0 ? 167 : 171;
-          const cb = strand === 0 ? 185 : 252;
+          const cr = strand === 0 ? 244 : 192;
+          const cg = strand === 0 ? 114 : 132;
+          const cb = strand === 0 ? 182 : 252;
 
           for (let ti = 0; ti < PI2; ti += STEP) {
             const t1   = ti          + phase;
@@ -130,7 +130,7 @@ export function DNAHelix({
             x2: sxB, y2: yRung,
             hw: TR * 0.7,
             depth: 0,
-            cr: 252, cg: 217, cb: 161,
+            cr: 253, cg: 230, cb: 138,
             alpha: 0.40,
           });
         }
