@@ -5,10 +5,10 @@
   --background: #fef0f5;
   --foreground: #4a0e28;
   --muted: #b87890;
-  --accent: #e8487c;
-  --accent-hover: #d03268;
+  --accent: #9440ac;
+  --accent-hover: #7a3090;
   --accent-2: #d4805a;
-  --accent-3: #a855c8;
+  --accent-3: #c870d8;
   --border: #fad0e0;
   --card: #fff5f8;
   --code-bg: #fde4ef;
@@ -19,8 +19,8 @@
   --background: #200818;
   --foreground: #fde8f2;
   --muted: #9b6880;
-  --accent: #f472b6;
-  --accent-hover: #f9a8d4;
+  --accent: #d488ee;
+  --accent-hover: #e4aaff;
   --accent-2: #fde68a;
   --accent-3: #c084fc;
   --border: rgba(244, 114, 182, 0.15);
@@ -111,10 +111,10 @@ body {
 
 /* ── Glow text utility ──────────────────────── */
 .glow-text {
-  text-shadow: 0 0 24px rgba(232,72,124,0.5), 0 0 50px rgba(232,72,124,0.22);
+  text-shadow: 0 0 24px rgba(148,64,172,0.5), 0 0 50px rgba(148,64,172,0.22);
 }
 .dark .glow-text {
-  text-shadow: 0 0 24px rgba(244,114,182,0.65), 0 0 50px rgba(244,114,182,0.28);
+  text-shadow: 0 0 24px rgba(212,136,238,0.65), 0 0 50px rgba(212,136,238,0.28);
 }
 
 /* ── Prose styles ───────────────────────────── */
