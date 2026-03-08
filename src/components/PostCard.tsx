@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { PostMeta } from "@/types/post";
 import { TagPill } from "./TagPill";
-import { LanguageBadge } from "./LanguageBadge";
 import { SpotlightCard } from "./ui/SpotlightCard";
 
 interface PostCardProps {
@@ -14,23 +13,17 @@ export function PostCard({ post }: PostCardProps) {
     { year: "numeric", month: "short", day: "numeric" }
   );
 
-  const accentColor =
-    post.language === "es"
-      ? { bar: "from-emerald-500 to-cyan-500", glow: "rgba(52,211,153,0.14)" }
-      : { bar: "from-cyan-500 to-violet-500",   glow: "rgba(34,211,238,0.14)" };
-
   return (
     <SpotlightCard
-      spotlightColor={accentColor.glow}
+      spotlightColor="rgba(34,211,238,0.14)"
       className="group relative flex flex-col rounded-2xl border border-[color:var(--border)] bg-[color:var(--card)] overflow-hidden hover:-translate-y-1 hover:border-white/15 transition-all duration-300 fade-in"
     >
       {/* Coloured top bar */}
-      <div className={`h-0.5 w-full bg-gradient-to-r ${accentColor.bar}`} />
+      <div className="h-0.5 w-full bg-gradient-to-r from-cyan-500 to-violet-500" />
 
       <div className="flex flex-col flex-1 p-5">
         {/* Meta row */}
-        <div className="flex items-center gap-2 mb-3 flex-wrap">
-          <LanguageBadge language={post.language} />
+        <div className="flex items-center gap-2 mb-3">
           <time dateTime={post.date} className="text-xs text-[color:var(--muted)]">
             {formattedDate}
           </time>

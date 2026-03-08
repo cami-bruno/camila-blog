@@ -13,15 +13,14 @@ const PAGE_SIZE = 6;
 
 export function BlogList({ posts, tags }: BlogListProps) {
   const [activeTag, setActiveTag] = useState<string | null>(null);
-  const [activeLang, setActiveLang] = useState<"all" | "es" | "en">("all");
   const [page, setPage] = useState(1);
 
   const filtered = useMemo(() => {
-    let result = posts;
-    if (activeTag) result = result.filter((p) => p.tags.map((t) => t.toLowerCase()).includes(activeTag.toLowerCase()));
-    if (activeLang !== "all") result = result.filter((p) => p.language === activeLang);
-    return result;
-  }, [posts, activeTag, activeLang]);
+    if (!activeTag) return posts;
+    return posts.filter((p) =>
+      p.tags.map((t) => t.toLowerCase()).includes(activeTag.toLowerCase())
+    );
+  }, [posts, activeTag]);
 
   const paginated = filtered.slice(0, page * PAGE_SIZE);
   const hasMore = paginated.length < filtered.length;
@@ -31,35 +30,11 @@ export function BlogList({ posts, tags }: BlogListProps) {
     setPage(1);
   };
 
-  const setLang = (lang: "all" | "es" | "en") => {
-    setActiveLang(lang);
-    setPage(1);
-  };
-
   return (
     <div>
-      {/* Filters */}
-      <div className="mb-8 space-y-4">
-        {/* Language filter */}
-        <div className="flex items-center gap-2">
-          <span className="text-xs font-medium text-[color:var(--muted)] uppercase tracking-wide mr-1">Language:</span>
-          {(["all", "en", "es"] as const).map((lang) => (
-            <button
-              key={lang}
-              onClick={() => setLang(lang)}
-              className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
-                activeLang === lang
-                  ? "bg-[color:var(--accent)] text-white"
-                  : "bg-[color:var(--card)] text-[color:var(--muted)] hover:text-[color:var(--foreground)] border border-[color:var(--border)]"
-              }`}
-            >
-              {lang === "all" ? "All" : lang.toUpperCase()}
-            </button>
-          ))}
-        </div>
-
-        {/* Tag filter */}
-        <div className="flex flex-wrap gap-2 items-center">
+      {/* Tag filter */}
+      {tags.length > 0 && (
+        <div className="flex flex-wrap gap-2 items-center mb-8">
           <span className="text-xs font-medium text-[color:var(--muted)] uppercase tracking-wide mr-1">Topics:</span>
           {tags.map((tag) => (
             <button
@@ -83,12 +58,12 @@ export function BlogList({ posts, tags }: BlogListProps) {
             </button>
           )}
         </div>
-      </div>
+      )}
 
       {/* Post list */}
       {filtered.length === 0 ? (
         <p className="text-[color:var(--muted)] text-sm py-8 text-center">
-          No posts found for the selected filters.
+          No posts found for the selected filter.
         </p>
       ) : (
         <>
