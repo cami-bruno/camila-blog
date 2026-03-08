@@ -2,29 +2,31 @@
 
 /* ── Design tokens ──────────────────────────── */
 :root {
-  --background: #fdf2f8;
-  --foreground: #2d0f2a;
-  --muted: #9b6e8f;
-  --accent: #db2777;
-  --accent-hover: #be185d;
-  --accent-2: #b45309;
-  --accent-3: #7c3aed;
-  --border: #f0cce4;
-  --card: #fff5fb;
-  --code-bg: #fce7f3;
+  --background: #fef0f5;
+  --foreground: #4a0e28;
+  --muted: #b87890;
+  --accent: #e8487c;
+  --accent-hover: #d03268;
+  --accent-2: #d4805a;
+  --accent-3: #a855c8;
+  --border: #fad0e0;
+  --card: #fff5f8;
+  --code-bg: #fde4ef;
+  --hero-bg: #c8456e;
 }
 
 .dark {
-  --background: #110812;
-  --foreground: #fdf0f8;
-  --muted: #9b7090;
+  --background: #200818;
+  --foreground: #fde8f2;
+  --muted: #9b6880;
   --accent: #f472b6;
   --accent-hover: #f9a8d4;
   --accent-2: #fde68a;
   --accent-3: #c084fc;
-  --border: rgba(244, 114, 182, 0.14);
-  --card: #1c0f1e;
-  --code-bg: #1c0f1e;
+  --border: rgba(244, 114, 182, 0.15);
+  --card: #301024;
+  --code-bg: #301024;
+  --hero-bg: #200818;
 }
 
 @theme inline {
@@ -59,7 +61,14 @@ body {
 /* ── Aurora static base ─────────────────────── */
 .aurora-base {
   background:
-    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(244,114,182,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(232,72,124,0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(168,85,200,0.16) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 60% at 50% 50%, rgba(212,128,90,0.10) 0%, transparent 60%);
+}
+
+.dark .aurora-base {
+  background:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(244,114,182,0.20) 0%, transparent 55%),
     radial-gradient(ellipse 60% 40% at 80% 110%, rgba(192,132,252,0.14) 0%, transparent 55%),
     radial-gradient(ellipse 50% 60% at 50% 50%, rgba(253,230,138,0.07) 0%, transparent 60%);
 }
@@ -101,6 +110,9 @@ body {
 .float-slow     { animation: float 7s ease-in-out infinite; }
 
 /* ── Glow text utility ──────────────────────── */
+.glow-text {
+  text-shadow: 0 0 24px rgba(232,72,124,0.5), 0 0 50px rgba(232,72,124,0.22);
+}
 .dark .glow-text {
   text-shadow: 0 0 24px rgba(244,114,182,0.65), 0 0 50px rgba(244,114,182,0.28);
 }

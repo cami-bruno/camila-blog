@@ -15,7 +15,7 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/8 bg-[#110812]/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/8 bg-[color:var(--background)]/80 backdrop-blur-xl">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
 
         {/* Brand */}
@@ -79,7 +79,7 @@ export function Navbar() {
 
       {/* Mobile dropdown */}
       {menuOpen && (
-        <nav className="sm:hidden border-t border-white/8 bg-[#110812]/95 backdrop-blur-xl px-4 py-3 flex flex-col gap-1"
+        <nav className="sm:hidden border-t border-white/8 bg-[color:var(--background)]/95 backdrop-blur-xl px-4 py-3 flex flex-col gap-1"
           aria-label="Mobile navigation">
           {navLinks.map(({ href, label }) => {
             const active = href === "/" ? pathname === "/" : pathname.startsWith(href);
