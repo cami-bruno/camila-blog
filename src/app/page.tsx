@@ -18,25 +18,25 @@ const interests = [
     emoji: "🧬",
     label: "Human Genetics",
     desc: "The idea that one base pair change can completely rewrite someone's life is still wild to me. I keep coming back to it.",
-    glow: "rgba(244,114,182,0.15)",
+    glow: "rgba(34,211,238,0.15)",
   },
   {
     emoji: "🔬",
     label: "Lab Techniques",
     desc: "PCR, gel electrophoresis, dilutions — not glamorous, but once you get why they work, everything clicks a little more.",
-    glow: "rgba(232,121,249,0.15)",
+    glow: "rgba(139,92,246,0.15)",
   },
   {
     emoji: "⚕️",
     label: "Diagnostics",
     desc: "There's a gap between figuring something out in a lab and actually getting it to a patient. That gap bothers me.",
-    glow: "rgba(244,114,182,0.15)",
+    glow: "rgba(52,211,153,0.15)",
   },
   {
     emoji: "🌱",
     label: "Biotech in Uruguay",
     desc: "I'm from here. Biotech doesn't always reach places like this, and I think about that more than I probably should.",
-    glow: "rgba(251,146,60,0.15)",
+    glow: "rgba(251,191,36,0.15)",
   },
 ];
 
@@ -75,7 +75,7 @@ export default function HomePage() {
               </p>
 
               <Link href="/blog"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[color:var(--accent)] text-white font-bold text-sm hover:opacity-90 transition-all shadow-[0_0_20px_rgba(244,114,182,0.35)] hover:shadow-[0_0_30px_rgba(244,114,182,0.55)]">
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[color:var(--accent)] text-white font-bold text-sm hover:opacity-90 transition-all shadow-[0_0_20px_rgba(34,211,238,0.35)] hover:shadow-[0_0_30px_rgba(34,211,238,0.55)]">
                 Read my thoughts →
               </Link>
             </div>
@@ -113,8 +113,8 @@ export default function HomePage() {
 
         {/* ── Now card ──────────────────────────────── */}
         <section className="mb-16" aria-label="Currently exploring">
-          <GlowBorderCard className="rounded-2xl" glowColor="rgba(244,114,182,0.4)">
-            <SpotlightCard spotlightColor="rgba(244,114,182,0.08)" className="p-6">
+          <GlowBorderCard className="rounded-2xl" glowColor="rgba(34,211,238,0.4)">
+            <SpotlightCard spotlightColor="rgba(34,211,238,0.08)" className="p-6">
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                 <span className="text-xs font-bold uppercase tracking-wider text-[color:var(--muted)]">

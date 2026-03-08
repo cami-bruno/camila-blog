@@ -18,7 +18,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       ? "dark"
       : "light";
     // Default to dark for the bioluminescence aesthetic
-    const initial = stored ?? "light";
+    const initial = stored ?? "dark";
     setTheme(initial);
     document.documentElement.classList.toggle("dark", initial === "dark");
   }, []);

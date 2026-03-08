@@ -2,31 +2,29 @@
 
 /* ── Design tokens ──────────────────────────── */
 :root {
-  --background: #fef0f5;
-  --foreground: #4a0e28;
-  --muted: #b87890;
-  --accent: #9440ac;
-  --accent-hover: #7a3090;
-  --accent-2: #d4805a;
-  --accent-3: #c870d8;
-  --border: #fad0e0;
-  --card: #fff5f8;
-  --code-bg: #fde4ef;
-  --hero-bg: #c8456e;
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --muted: #64748b;
+  --accent: #0891b2;
+  --accent-hover: #0e7490;
+  --accent-2: #059669;
+  --accent-3: #7c3aed;
+  --border: #e2e8f0;
+  --card: #f8fafc;
+  --code-bg: #f1f5f9;
 }
 
 .dark {
-  --background: #200818;
-  --foreground: #fde8f2;
-  --muted: #9b6880;
-  --accent: #d488ee;
-  --accent-hover: #e4aaff;
-  --accent-2: #fde68a;
-  --accent-3: #c084fc;
-  --border: rgba(244, 114, 182, 0.15);
-  --card: #301024;
-  --code-bg: #301024;
-  --hero-bg: #200818;
+  --background: #020817;
+  --foreground: #e2e8f0;
+  --muted: #64748b;
+  --accent: #22d3ee;
+  --accent-hover: #67e8f9;
+  --accent-2: #34d399;
+  --accent-3: #a78bfa;
+  --border: rgba(255, 255, 255, 0.08);
+  --card: #0d1117;
+  --code-bg: #0d1117;
 }
 
 @theme inline {
@@ -61,16 +59,9 @@ body {
 /* ── Aurora static base ─────────────────────── */
 .aurora-base {
   background:
-    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(232,72,124,0.22) 0%, transparent 55%),
-    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(168,85,200,0.16) 0%, transparent 55%),
-    radial-gradient(ellipse 50% 60% at 50% 50%, rgba(212,128,90,0.10) 0%, transparent 60%);
-}
-
-.dark .aurora-base {
-  background:
-    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(244,114,182,0.20) 0%, transparent 55%),
-    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(192,132,252,0.14) 0%, transparent 55%),
-    radial-gradient(ellipse 50% 60% at 50% 50%, rgba(253,230,138,0.07) 0%, transparent 60%);
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(6,182,212,0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(139,92,246,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 60% at 50% 50%, rgba(16,185,129,0.06) 0%, transparent 60%);
 }
 
 /* ── Dot grid ───────────────────────────────── */
@@ -111,10 +102,10 @@ body {
 
 /* ── Glow text utility ──────────────────────── */
 .glow-text {
-  text-shadow: 0 0 24px rgba(148,64,172,0.5), 0 0 50px rgba(148,64,172,0.22);
+  text-shadow: 0 0 24px rgba(34,211,238,0.5), 0 0 50px rgba(34,211,238,0.22);
 }
 .dark .glow-text {
-  text-shadow: 0 0 24px rgba(212,136,238,0.65), 0 0 50px rgba(212,136,238,0.28);
+  text-shadow: 0 0 20px rgba(34,211,238,0.5), 0 0 40px rgba(34,211,238,0.25);
 }
 
 /* ── Prose styles ───────────────────────────── */

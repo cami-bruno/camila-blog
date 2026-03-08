@@ -79,9 +79,9 @@ export function DNAHelix({
         /* ── two helix strands ── */
         for (let strand = 0; strand < 2; strand++) {
           const phase = strand * Math.PI;
-          const cr = strand === 0 ? 244 : 192;
-          const cg = strand === 0 ? 114 : 132;
-          const cb = strand === 0 ? 182 : 252;
+          const cr = strand === 0 ?  34 : 139;
+          const cg = strand === 0 ? 211 :  92;
+          const cb = strand === 0 ? 238 : 246;
 
           for (let ti = 0; ti < PI2; ti += STEP) {
             const t1   = ti          + phase;

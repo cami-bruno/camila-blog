@@ -53,7 +53,7 @@ export function Navbar() {
               >
                 {label}
                 {active && (
-                  <span className="absolute bottom-0 left-3 right-3 h-px rounded-full bg-[color:var(--accent)] shadow-[0_0_6px_rgba(244,114,182,0.85)]" />
+                  <span className="absolute bottom-0 left-3 right-3 h-px rounded-full bg-[color:var(--accent)] shadow-[0_0_6px_rgba(34,211,238,0.85)]" />
                 )}
               </Link>
             );

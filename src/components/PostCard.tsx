@@ -15,11 +15,11 @@ export function PostCard({ post }: PostCardProps) {
 
   return (
     <SpotlightCard
-      spotlightColor="rgba(244,114,182,0.14)"
+      spotlightColor="rgba(34,211,238,0.14)"
       className="group relative flex flex-col rounded-2xl border border-[color:var(--border)] bg-[color:var(--card)] overflow-hidden hover:-translate-y-1 hover:border-white/15 transition-all duration-300 fade-in"
     >
       {/* Coloured top bar */}
-      <div className="h-0.5 w-full bg-gradient-to-r from-pink-400 to-purple-400" />
+      <div className="h-0.5 w-full bg-gradient-to-r from-cyan-500 to-violet-500" />
 
       <div className="flex flex-col flex-1 p-5">
         {/* Meta row */}
