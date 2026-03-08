@@ -14,40 +14,40 @@ export function PostCard({ post }: PostCardProps) {
   );
 
   return (
-    <SpotlightCard
-      spotlightColor="rgba(34,211,238,0.14)"
-      className="group relative flex flex-col rounded-2xl border border-[color:var(--border)] bg-[color:var(--card)] overflow-hidden hover:-translate-y-1 hover:border-white/15 transition-all duration-300 fade-in"
-    >
-      <div className="flex flex-col flex-1 p-5">
-        {/* Meta row */}
-        <div className="flex items-center gap-2 mb-3">
-          <time dateTime={post.date} className="text-xs text-[color:var(--muted)]">
-            {formattedDate}
-          </time>
-          <span className="text-xs text-[color:var(--muted)]">
-            · {post.readingTime} min read
-          </span>
-        </div>
+    <Link href={`/blog/${post.slug}`} className="block">
+      <SpotlightCard
+        spotlightColor="rgba(34,211,238,0.14)"
+        className="group relative flex flex-col rounded-2xl border border-[color:var(--border)] bg-[color:var(--card)] overflow-hidden hover:-translate-y-1 hover:border-white/15 transition-all duration-300 fade-in"
+      >
+        <div className="flex flex-col flex-1 p-5">
+          {/* Meta row */}
+          <div className="flex items-center gap-2 mb-3">
+            <time dateTime={post.date} className="text-xs text-[color:var(--muted)]">
+              {formattedDate}
+            </time>
+            <span className="text-xs text-[color:var(--muted)]">
+              · {post.readingTime} min read
+            </span>
+          </div>
 
-        {/* Title */}
-        <Link href={`/blog/${post.slug}`} className="flex-1">
-          <h2 className="text-base font-bold text-[color:var(--foreground)] group-hover:text-[color:var(--accent)] transition-colors leading-snug mb-2">
+          {/* Title */}
+          <h2 className="flex-1 text-base font-bold text-[color:var(--foreground)] group-hover:text-[color:var(--accent)] transition-colors leading-snug mb-2">
             {post.title}
           </h2>
-        </Link>
 
-        {/* Excerpt */}
-        <p className="text-sm text-[color:var(--muted)] line-clamp-2 mb-4 leading-relaxed">
-          {post.excerpt}
-        </p>
+          {/* Excerpt */}
+          <p className="text-sm text-[color:var(--muted)] line-clamp-2 mb-4 leading-relaxed">
+            {post.excerpt}
+          </p>
 
-        {/* Tags */}
-        <div className="flex flex-wrap gap-1.5 mt-auto">
-          {post.tags.map((tag) => (
-            <TagPill key={tag} tag={tag} />
-          ))}
+          {/* Tags */}
+          <div className="flex flex-wrap gap-1.5 mt-auto">
+            {post.tags.map((tag) => (
+              <TagPill key={tag} tag={tag} />
+            ))}
+          </div>
         </div>
-      </div>
-    </SpotlightCard>
+      </SpotlightCard>
+    </Link>
   );
 }
