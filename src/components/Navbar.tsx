@@ -22,7 +22,7 @@ export function Navbar() {
         <Link href="/" className="flex items-center gap-2 group">
           {/* DNA double-helix icon */}
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"
-            className="text-[color:var(--accent)] transition-all duration-300 group-hover:rotate-12 group-hover:drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]">
+            className="text-[color:var(--accent)] transition-all duration-300 group-hover:rotate-12 group-hover:drop-shadow-[0_0_6px_rgba(244,63,94,0.7)]">
             <circle cx="7"  cy="4"  r="2.5" fill="currentColor" opacity="0.9"/>
             <circle cx="15" cy="11" r="2.5" fill="currentColor" opacity="0.7"/>
             <circle cx="7"  cy="18" r="2.5" fill="currentColor" opacity="0.9"/>
@@ -53,7 +53,7 @@ export function Navbar() {
               >
                 {label}
                 {active && (
-                  <span className="absolute bottom-0 left-3 right-3 h-px rounded-full bg-[color:var(--accent)] shadow-[0_0_6px_rgba(34,211,238,0.8)]" />
+                  <span className="absolute bottom-0 left-3 right-3 h-px rounded-full bg-[color:var(--accent)] shadow-[0_0_6px_rgba(244,63,94,0.8)]" />
                 )}
               </Link>
             );
