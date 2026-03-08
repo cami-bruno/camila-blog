@@ -15,7 +15,7 @@ export function PostCard({ post }: PostCardProps) {
 
   return (
     <SpotlightCard
-      spotlightColor="rgba(244,63,94,0.14)"
+      spotlightColor="rgba(244,167,185,0.14)"
       className="group relative flex flex-col rounded-2xl border border-[color:var(--border)] bg-[color:var(--card)] overflow-hidden hover:-translate-y-1 hover:border-white/15 transition-all duration-300 fade-in"
     >
       {/* Coloured top bar */}

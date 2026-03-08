@@ -15,14 +15,14 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/8 bg-[#020817]/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/8 bg-[#0e0608]/80 backdrop-blur-xl">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
 
         {/* Brand */}
         <Link href="/" className="flex items-center gap-2 group">
           {/* DNA double-helix icon */}
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"
-            className="text-[color:var(--accent)] transition-all duration-300 group-hover:rotate-12 group-hover:drop-shadow-[0_0_6px_rgba(244,63,94,0.7)]">
+            className="text-[color:var(--accent)] transition-all duration-300 group-hover:rotate-12 group-hover:drop-shadow-[0_0_6px_rgba(244,167,185,0.7)]">
             <circle cx="7"  cy="4"  r="2.5" fill="currentColor" opacity="0.9"/>
             <circle cx="15" cy="11" r="2.5" fill="currentColor" opacity="0.7"/>
             <circle cx="7"  cy="18" r="2.5" fill="currentColor" opacity="0.9"/>
@@ -53,7 +53,7 @@ export function Navbar() {
               >
                 {label}
                 {active && (
-                  <span className="absolute bottom-0 left-3 right-3 h-px rounded-full bg-[color:var(--accent)] shadow-[0_0_6px_rgba(244,63,94,0.8)]" />
+                  <span className="absolute bottom-0 left-3 right-3 h-px rounded-full bg-[color:var(--accent)] shadow-[0_0_6px_rgba(244,167,185,0.8)]" />
                 )}
               </Link>
             );
@@ -79,7 +79,7 @@ export function Navbar() {
 
       {/* Mobile dropdown */}
       {menuOpen && (
-        <nav className="sm:hidden border-t border-white/8 bg-[#020817]/95 backdrop-blur-xl px-4 py-3 flex flex-col gap-1"
+        <nav className="sm:hidden border-t border-white/8 bg-[#0e0608]/95 backdrop-blur-xl px-4 py-3 flex flex-col gap-1"
           aria-label="Mobile navigation">
           {navLinks.map(({ href, label }) => {
             const active = href === "/" ? pathname === "/" : pathname.startsWith(href);
