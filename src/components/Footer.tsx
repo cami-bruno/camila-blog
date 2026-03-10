@@ -22,12 +22,6 @@ export function Footer() {
           >
             LinkedIn
           </a>
-          <Link
-            href="/rss.xml"
-            className="hover:text-[color:var(--accent)] transition-colors"
-          >
-            RSS
-          </Link>
         </div>
       </div>
     </footer>
